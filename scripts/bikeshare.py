@@ -61,7 +61,7 @@ def load_data(city, month, day):
     """
     # Check path of the CSV file
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    data_dir = os.path.join(script_dir, '..', 'data')  # Navigate to the data directory
+    data_dir = os.path.normpath(os.path.join(script_dir, '..', 'data'))  # Navigate to the data directory
     file_path = os.path.join(data_dir, CITY_DATA[city])
 
     # Load the CSV file
