@@ -98,6 +98,10 @@ def load_data(city, month, day):
     if day != 'all':
         df = df[df['day_of_week'].str.lower() == day]
     
+    if df.empty:
+        print("No data available for the selected filters. Please try again.")
+        return None
+
     print("DataFrame loaded and filtered.")
     
     return df
@@ -218,6 +222,9 @@ def main():
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
+
+        if df is None:
+            continue
 
         time_stats(df)
         station_stats(df)
