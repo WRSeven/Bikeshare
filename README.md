@@ -36,6 +36,20 @@ We welcome contributions! To contribute:
 
 Please ensure your code follows best practices and includes comments where necessary.
 
+
+# Project Structure
+
+- **data/**  
+  Contains the CSV files to be analyzed. Each file represents bikeshare data for a specific city.
+
+- **scripts/bikeshare.py**  
+  The main analysis script. It processes the CSV files and generates insights such as trip duration, popular stations, and usage patterns.
+
+### Adding New Cities
+If you want to analyze data for new cities:
+- Place the new CSV files in the `data/` folder.
+- Update the script `scripts/bikeshare.py` to include the new city-specific logic (e.g., file naming conventions, station mappings, or additional columns).
+
 ## Credits
 
 Special thanks to the open-source community for providing helpful resources.
