@@ -1,2 +1,2 @@
 # Ignore data files
-data/*.csv
+*.csv
