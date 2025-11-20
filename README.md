@@ -24,7 +24,7 @@ Weekday vs. weekend trends
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/bikeshare-analysis.git
-   cd *\bikeshare
+   cd \bikeshare
    pip install -r requirements.txt
 
 ## Contribution Guidelines
@@ -37,9 +37,6 @@ We welcome contributions! To contribute:
 Please ensure your code follows best practices and includes comments where necessary.
 
 ## Credits
-
-This project was inspired by:
-- [Example Repo](https://github.comorials on data analysis with Python and Pandas.
 
 Special thanks to the open-source community for providing helpful resources.
 
