@@ -12,6 +12,13 @@ MONTH_DATA = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
 
 WEEK_DATA = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
+def get_valid_input(prompt, valid_options):
+    while True:
+        user_input = input(prompt).lower().strip()
+        if user_input in valid_options:
+            return user_input
+        print(f"Invalid input. Please choose from: {', '.join(valid_options)}")
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -24,27 +31,10 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     
     # User input for city, month, day with validation
-    while True:
-        city = str(input("Enter city name (chicago, new york city, washington): ").lower().strip())
-        if city in CITY_DATA:
-            print(f"Valid: {city}")
-            break
-        else:
-            print("Invalid. Please choose chicago, new york city, or washington")
-    while True:
-        month = str(input("Enter month (all, january, february, ... , june): ").lower().strip())
-        if month in MONTH_DATA:
-            print(f"Valid: {month}")
-            break
-        else:
-            print("Invalid: Enter month (all, january, february, ... , june): ")
-    while True:
-        day = str(input("Enter day of week (all, monday, tuesday, ... sunday): ").lower().strip())
-        if day in WEEK_DATA:
-            print(f"Valid: {day}")
-            break
-        else:
-            print("Invalid: Enter day of week (all, monday, tuesday, ... sunday): ")
+    city = get_valid_input("Enter city name (chicago, new york city, washington): ", CITY_DATA.keys())
+    month = get_valid_input("Enter month (all, january, february, ... , june): ", MONTH_DATA)
+    day = get_valid_input("Enter day of week (all, monday, tuesday, ... sunday): ", WEEK_DATA)
+    
     print('-'*40)
     return city, month, day
 
